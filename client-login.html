@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Client - Viconseil</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="client-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    Viconseil
+                    <span class="logo-tagline">Partenaire de votre croissance</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Mon offre</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="client-login.html" class="client-login-btn">Espace Client</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </nav>
+    </header>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="container">
+            <div class="login-container">
+                <div class="login-form-wrapper">
+                    <h2>Connexion à votre Espace Client</h2>
+                    <p>Accédez à vos factures et gérez vos paiements en toute sécurité</p>
+                    
+                    <form id="loginForm" class="login-form">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="remember-me">
+                                <input type="checkbox" id="remember">
+                                <span class="checkmark"></span>
+                                Se souvenir de moi
+                            </label>
+                            <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                        </div>
+                        
+                        <button type="submit" class="login-btn">Se connecter</button>
+                    </form>
+                    
+                    <div class="login-help">
+                        <p>Vous n'avez pas encore d'accès ?</p>
+                        <p>Contactez-nous à <a href="mailto:contact@viconseil.fr">contact@viconseil.fr</a></p>
+                    </div>
+                </div>
+                
+                <div class="login-info">
+                    <div class="info-card">
+                        <h3>🔒 Sécurisé</h3>
+                        <p>Vos données sont protégées par un cryptage de niveau bancaire</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📊 Factures</h3>
+                        <p>Consultez et téléchargez toutes vos factures en un clic</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>💳 Paiement</h3>
+                        <p>Réglez vos factures par carte bancaire ou virement SEPA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Viconseil. Tous droits réservés. | DAF Externalisé & Conseil Financier pour TPE, PME & ETI</p>
+        </div>
+    </footer>
+
+    <script src="client-security.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Rediriger si déjà connecté
+            if (clientSecurity.isLoggedIn()) {
+                window.location.href = 'client-dashboard.html';
+                return;
+            }
+
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value;
+                const rememberMe = document.getElementById('remember').checked;
+                
+                // Validation côté client
+                if (!email || !password) {
+                    alert('Veuillez saisir votre email et mot de passe.');
+                    return;
+                }
+                
+                try {
+                    // Tentative de connexion
+                    if (clientSecurity.login(email, password, rememberMe)) {
+                        // Connexion réussie
+                        window.location.href = 'client-dashboard.html';
+                    }
+                } catch (error) {
+                    // Afficher l'erreur (tentatives échouées, compte verrouillé, etc.)
+                    alert(error.message);
+                }
+            });
+
+            // Gestion du mot de passe oublié
+            document.querySelector('.forgot-password').addEventListener('click', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('email').value.trim();
+                
+                if (!email) {
+                    alert('Veuillez saisir votre email pour réinitialiser le mot de passe.');
+                    document.getElementById('email').focus();
+                    return;
+                }
+                
+                // Simulation - en production, envoyer un email de réinitialisation
+                alert(`Un email de réinitialisation a été envoyé à ${email} (fonctionnalité de démonstration).`);
+            });
+        });
+    </script>
+</body>
+</html>

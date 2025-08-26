@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Client - Viconseil</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="client-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    Viconseil
+                    <span class="logo-tagline">Partenaire de votre croissance</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Mon offre</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" onclick="logout()" class="logout-btn">Déconnexion</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </nav>
+    </header>
+
+    <!-- Dashboard -->
+    <section class="dashboard">
+        <div class="dashboard-header">
+            <div class="container">
+                <div class="dashboard-nav">
+                    <div class="client-info">
+                        <h2 id="clientName">Bienvenue</h2>
+                        <p id="clientEmail">client@example.com</p>
+                    </div>
+                    <div class="quick-actions">
+                        <button onclick="showPaymentModal()" class="cta-button">Effectuer un paiement</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="dashboard-content">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <h3>Navigation</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#" class="active" data-section="invoices">📋 Mes Factures</a></li>
+                        <li><a href="#" data-section="payments">💳 Mes Paiements</a></li>
+                        <li><a href="#" data-section="profile">👤 Mon Profil</a></li>
+                        <li><a href="#" data-section="support">❓ Support</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="main-content">
+                    <!-- Invoices Section -->
+                    <div id="invoices-section" class="content-section active">
+                        <div class="content-header">
+                            <h3>Mes Factures</h3>
+                            <button class="filter-btn" onclick="toggleFilters()">Filtres</button>
+                        </div>
+                        
+                        <div id="filters" class="filters-panel" style="display: none;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; margin-bottom: 1rem;">
+                                <select id="statusFilter">
+                                    <option value="">Tous les statuts</option>
+                                    <option value="paid">Payées</option>
+                                    <option value="pending">En attente</option>
+                                    <option value="overdue">En retard</option>
+                                </select>
+                                <input type="date" id="dateFilter" placeholder="Date">
+                                <button onclick="applyFilters()" class="filter-btn">Appliquer</button>
+                            </div>
+                        </div>
+
+                        <table class="invoices-table">
+                            <thead>
+                                <tr>
+                                    <th>N° Facture</th>
+                                    <th>Date</th>
+                                    <th>Montant</th>
+                                    <th>Statut</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="invoicesTableBody">
+                                <!-- Les factures seront ajoutées dynamiquement -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Payments Section -->
+                    <div id="payments-section" class="content-section">
+                        <div class="content-header">
+                            <h3>Historique des Paiements</h3>
+                        </div>
+                        
+                        <table class="invoices-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Facture</th>
+                                    <th>Montant</th>
+                                    <th>Méthode</th>
+                                    <th>Statut</th>
+                                </tr>
+                            </thead>
+                            <tbody id="paymentsTableBody">
+                                <!-- L'historique des paiements sera ajouté dynamiquement -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Profile Section -->
+                    <div id="profile-section" class="content-section">
+                        <div class="content-header">
+                            <h3>Mon Profil</h3>
+                        </div>
+                        
+                        <div class="profile-form">
+                            <div class="form-group">
+                                <label>Nom de l'entreprise</label>
+                                <input type="text" id="companyName" value="Société Démo" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="profileEmail" value="demo@client.fr" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Adresse</label>
+                                <textarea id="address" readonly>123 Rue de la Paix
+75001 Paris, France</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Téléphone</label>
+                                <input type="tel" id="phone" value="+33 1 23 45 67 89" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Support Section -->
+                    <div id="support-section" class="content-section">
+                        <div class="content-header">
+                            <h3>Support Client</h3>
+                        </div>
+                        
+                        <div class="support-content">
+                            <div class="support-card">
+                                <h4>📧 Contact Email</h4>
+                                <p><a href="mailto:contact@viconseil.fr">contact@viconseil.fr</a></p>
+                                <p>Réponse sous 24h ouvrées</p>
+                            </div>
+                            <div class="support-card">
+                                <h4>📞 Téléphone</h4>
+                                <p><a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
+                                <p>Lun-Ven 9h-18h</p>
+                            </div>
+                            <div class="support-card">
+                                <h4>📅 Prendre rendez-vous</h4>
+                                <p><a href="https://calendly.com/viconseil" target="_blank" class="cta-button">Réserver un créneau</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Paiement de la facture</h2>
+            <div id="invoiceDetails" class="invoice-details">
+                <!-- Les détails de la facture seront ajoutés ici -->
+            </div>
+            
+            <div class="payment-methods">
+                <div class="payment-method" data-method="card">
+                    <h4>💳 Carte Bancaire</h4>
+                    <p>Paiement sécurisé par carte</p>
+                </div>
+                <div class="payment-method" data-method="transfer">
+                    <h4>🏦 Virement SEPA</h4>
+                    <p>Virement bancaire européen</p>
+                </div>
+            </div>
+
+            <div class="payment-form">
+                <!-- Card Payment Form -->
+                <div id="cardForm" class="card-form">
+                    <div class="form-group">
+                        <label>Numéro de carte</label>
+                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label>Date d'expiration</label>
+                            <input type="text" id="cardExpiry" placeholder="MM/AA" maxlength="5">
+                        </div>
+                        <div class="form-group">
+                            <label>Code CVV</label>
+                            <input type="text" id="cardCvv" placeholder="123" maxlength="4">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Nom du porteur</label>
+                        <input type="text" id="cardName" placeholder="Jean Dupont">
+                    </div>
+                    <button onclick="processCardPayment()" class="pay-now-btn">Payer maintenant</button>
+                </div>
+
+                <!-- Transfer Information -->
+                <div id="transferForm" class="transfer-form" style="display: none;">
+                    <h4>Informations de virement</h4>
+                    <div class="bank-details">
+                        <p><strong>IBAN:</strong> FR76 3000 3000 1100 0000 0000 145</p>
+                        <p><strong>BIC:</strong> SOGEFRPP</p>
+                        <p><strong>Titulaire:</strong> VICONSEIL</p>
+                        <p><strong>Référence:</strong> <span id="transferReference"></span></p>
+                    </div>
+                    <p style="color: #666; font-style: italic; margin-top: 1rem;">
+                        Veuillez indiquer la référence dans le libellé de votre virement.
+                        Le paiement sera confirmé sous 2-3 jours ouvrés.
+                    </p>
+                    <button onclick="confirmTransfer()" class="pay-now-btn">J'ai effectué le virement</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Viconseil. Tous droits réservés. | DAF Externalisé & Conseil Financier pour TPE, PME & ETI</p>
+        </div>
+    </footer>
+
+    <script src="client-security.js"></script>
+    <script src="client-dashboard.js"></script>
+</body>
+</html>
