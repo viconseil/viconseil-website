@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viconseil - Mon offre</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                Viconseil
+                <span class="logo-tagline">Partenaire de votre croissance</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Mon offre</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </nav>
+    </header>
+
+    <!-- Services Section -->
+    <section class="main-content">
+        <div class="container">
+            <h2 class="section-title">Mon offre</h2>
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <a href="contact.html" class="cta-button">Prendre Rendez-vous</a>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Pilotage Financier</h3>
+                    <div class="service-list">
+                        <div class="service-item">Business plans</div>
+                        <div class="service-item">Suivi du cash flow</div>
+                        <div class="service-item">Prévisions budgétaires</div>
+                        <div class="service-item">Reportings financiers</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Contrôle de Gestion</h3>
+                    <div class="service-list">
+                        <div class="service-item">Analyse des coûts</div>
+                        <div class="service-item">Rentabilité par activité</div>
+                        <div class="service-item">Optimisation des marges</div>
+                        <div class="service-item">Outils de pilotage opérationnel</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Levée de Fonds</h3>
+                    <div class="service-list">
+                        <div class="service-item">Préparation du dossier</div>
+                        <div class="service-item">Présentation aux investisseurs</div>
+                        <div class="service-item">Négociation avec les banques</div>
+                        <div class="service-item">Suivi des démarches</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚖️</div>
+                    <h3>Conformité & Reporting</h3>
+                    <div class="service-list">
+                        <div class="service-item">Mise en conformité comptable</div>
+                        <div class="service-item">Préparation des clôtures</div>
+                        <div class="service-item">Reporting financier</div>
+                        <div class="service-item">Accompagnement des audits</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Viconseil. Tous droits réservés. | DAF Externalisé & Conseil Financier pour TPE, PME & ETI</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards for animation
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

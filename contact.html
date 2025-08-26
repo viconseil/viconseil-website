@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viconseil - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                Viconseil
+                <span class="logo-tagline">Partenaire de votre croissance</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Mon offre</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="main-content contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Prenons Rendez-vous</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Demande de Rendez-vous</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nom">Nom & Prénom *</label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="entreprise">Entreprise *</label>
+                            <input type="text" id="entreprise" name="entreprise" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone">Téléphone</label>
+                            <input type="tel" id="telephone" name="telephone">
+                        </div>
+                        <div class="form-group">
+                            <label for="besoin">Type de besoin</label>
+                            <select id="besoin" name="besoin">
+                                <option value="">Sélectionnez...</option>
+                                <option value="pilotage">Pilotage financier</option>
+                                <option value="controle">Contrôle de gestion</option>
+                                <option value="levee">Levée de fonds</option>
+                                <option value="conformite">Conformité & Reporting</option>
+                                <option value="strategie">Stratégie financière</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Décrivez brièvement votre besoin..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Envoyer la demande</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Informations de Contact</h3>
+                    <div class="contact-item">
+                        <i>📧</i>
+                        <span>vincent@viconseil.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i>📱</i>
+                        <span>06 84 18 53 99</span>
+                    </div>
+                    <div class="contact-item">
+                        <i>📍</i>
+                        <span>Occitanie</span>
+                    </div>
+                    <div class="contact-item">
+                        <i>🕒</i>
+                        <span>Réponse sous 24h</span>
+                    </div>
+                    <div class="contact-item">
+                        <i>💼</i>
+                        <span><a href="https://linkedin.com/in/vincent-izquierdo" target="_blank" style="color: #64b5f6; text-decoration: none;">LinkedIn</a></span>
+                    </div>
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                        <h4 style="margin-bottom: 1rem;">Pourquoi me choisir ?</h4>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 0.5rem;">✓ Expertise reconnue en finance</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Flexibilité et réactivité</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Tarifs adaptés aux PME</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Accompagnement personnalisé</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Viconseil. Tous droits réservés. | DAF Externalisé & Conseil Financier pour TPE, PME & ETI</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Envoi en cours...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Merci pour votre demande ! Je vous recontacterai dans les plus brefs délais.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                document.getElementById('contactForm').reset();
+            }, 2000);
+        });
+
+        // Add fade-in animation on load
+        window.addEventListener('load', function() {
+            const contactContent = document.querySelector('.contact-content');
+            contactContent.style.opacity = '0';
+            contactContent.style.transform = 'translateY(30px)';
+            contactContent.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            
+            setTimeout(() => {
+                contactContent.style.opacity = '1';
+                contactContent.style.transform = 'translateY(0)';
+            }, 200);
+        });
+    </script>
+</body>
+</html>

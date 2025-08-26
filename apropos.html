@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viconseil - À propos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                Viconseil
+                <span class="logo-tagline">Partenaire de votre croissance</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Mon offre</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section class="main-content">
+        <div class="container">
+            <h2 class="section-title">À propos</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="vincent-photo.jpg" alt="Vincent - DAF externalisé" style="width: 100%; max-width: 350px; height: auto; object-fit: contain; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
+                </div>
+                <div class="about-text">
+                    <p>📈 <strong>15 ans d'expérience</strong> au sein des directions financières</p>
+                    <p>J'accompagne les TPE, PME et ETI dans leur développement avec :</p>
+                    
+                    <div style="margin: 2rem 0;">
+                        <p>🔧 <strong>Polyvalence</strong> - Expertise adaptée à tous les secteurs d'activité</p>
+                        <p>🚀 <strong>Innovation</strong> - À la page des nouveaux outils du marché</p>
+                        <p>🤖 <strong>Intelligence Artificielle</strong> - Intégration des solutions IA pour optimiser vos processus</p>
+                        <p>💼 <strong>Microsoft 365</strong> - Maîtrise complète de la suite collaborative</p>
+                        <p>⚡ <strong>Autonomie</strong> - Prise en main rapide et efficace</p>
+                        <p>🎯 <strong>Rigueur</strong> - Précision dans l'analyse et le suivi</p>
+                        <p>📊 <strong>Performance</strong> - Résultats concrets et mesurables</p>
+                    </div>
+                    
+                    <p>Mon approche opérationnelle permet une mise en place rapide des outils et processus nécessaires, sans les contraintes d'un recrutement en CDI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Viconseil. Tous droits réservés. | DAF Externalisé & Conseil Financier pour TPE, PME & ETI</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add fade-in animation on load
+        window.addEventListener('load', function() {
+            const aboutContent = document.querySelector('.about-content');
+            aboutContent.style.opacity = '0';
+            aboutContent.style.transform = 'translateY(30px)';
+            aboutContent.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            
+            setTimeout(() => {
+                aboutContent.style.opacity = '1';
+                aboutContent.style.transform = 'translateY(0)';
+            }, 200);
+        });
+    </script>
+</body>
+</html>
