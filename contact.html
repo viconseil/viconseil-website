@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viconseil - Contact</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -111,23 +112,46 @@
     </footer>
 
     <script>
-        // Form submission handling
+        // Initialize EmailJS
+        emailjs.init('DiwXIRDrF3ZYQpJT4');
+
+        // Form submission handling with EmailJS
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Simulate form submission
             const submitBtn = document.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
             
+            // Change button state
             submitBtn.textContent = 'Envoi en cours...';
             submitBtn.disabled = true;
             
-            setTimeout(() => {
-                alert('Merci pour votre demande ! Je vous recontacterai dans les plus brefs délais.');
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                document.getElementById('contactForm').reset();
-            }, 2000);
+            // Prepare template parameters
+            const templateParams = {
+                from_name: document.getElementById('nom').value,
+                from_email: document.getElementById('email').value,
+                company: document.getElementById('entreprise').value,
+                phone: document.getElementById('telephone').value,
+                service_type: document.getElementById('besoin').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Send email via EmailJS
+            emailjs.send('service_8p0xltx', 'template_hje0hun', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Merci pour votre demande ! Je vous recontacterai dans les plus brefs délais.');
+                    document.getElementById('contactForm').reset();
+                })
+                .catch(function(error) {
+                    console.log('FAILED...', error);
+                    alert('Erreur lors de l\'envoi. Veuillez réessayer ou me contacter directement.');
+                })
+                .finally(function() {
+                    // Reset button state
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
         });
 
         // Add fade-in animation on load
