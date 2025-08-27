@@ -4,6 +4,40 @@
     box-sizing: border-box;
 }
 
+/* Environment Banner */
+.env-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    padding: 8px 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.env-banner.local {
+    background: linear-gradient(45deg, #8e44ad, #9b59b6);
+}
+
+.env-banner.dev {
+    background: linear-gradient(45deg, #e67e22, #f39c12);
+}
+
+/* Adjust body padding when banner is visible */
+body.has-env-banner {
+    padding-top: 40px;
+}
+
+body.has-env-banner header {
+    top: 40px;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* Styles pour le bouton Espace Client */
