@@ -95,17 +95,20 @@ nav {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 12px;
 }
 
-.logo-tagline {
-    font-size: 0.9rem;
-    font-weight: normal;
-    margin-top: -2px;
+.logo-icon {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
     color: white;
-    background: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-shadow: none;
     -webkit-text-fill-color: white;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
 }
 
 .nav-links {
