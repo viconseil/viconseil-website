@@ -356,9 +356,10 @@ nav {
 /* ========== SERVICES SECTION ========== */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     margin-top: 60px;
+    align-items: stretch;
 }
 
 .service-card {
@@ -368,6 +369,9 @@ nav {
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     border-left: 4px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-card:hover {
@@ -421,7 +425,7 @@ nav {
 }
 
 .testimonial-quote {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-style: italic;
     color: var(--text-primary);
     line-height: 1.6;
@@ -496,6 +500,13 @@ footer p {
     cursor: pointer;
 }
 
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
@@ -540,8 +551,33 @@ footer p {
     
     .values-grid,
     .services-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
         gap: 24px;
+        padding: 0 20px 20px 20px;
+        margin: 60px -20px 0 -20px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary-color) transparent;
+    }
+    
+    .services-grid::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .services-grid::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    .services-grid::-webkit-scrollbar-thumb {
+        background-color: var(--primary-color);
+        border-radius: 10px;
+    }
+    
+    .service-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
     }
     
     .cta-buttons {
