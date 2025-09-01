@@ -385,12 +385,21 @@ nav {
 }
 
 /* ========== SERVICES SECTION ========== */
+/* Réduction des marges pour la section services */
+.section:has(.services-grid) .text-center h2 {
+    margin-bottom: 8px;
+}
+
+.section:has(.services-grid) .text-center .text-large {
+    margin-bottom: 8px;
+}
+
 .services-grid {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 32px;
-    margin-top: 40px;
+    margin-top: 24px;
     padding-bottom: 20px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
