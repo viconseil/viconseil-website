@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Pages publiques à indexer
+Allow: /index.html
+Allow: /services.html
+Allow: /apropos.html
+Allow: /contact.html
+
+# Bloquer l'espace client (données sensibles)
+Disallow: /client-login.html
+Disallow: /client-dashboard.html
+
+# Bloquer les fichiers techniques
+Disallow: *.css
+Disallow: *.js
+Disallow: /LOGO/
+
+# Autoriser les images principales
+Allow: /vincent-photo.jpg
+Allow: /favicon.png
+
+# Sitemap
+Sitemap: https://viconseil.com/sitemap.xml
