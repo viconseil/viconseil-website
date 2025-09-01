@@ -3,107 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VI Conseil - Contact</title>
+    <title>VI Conseil - Contact & Prise de Rendez-vous</title>
+    <meta name="description" content="Contactez Vincent pour un diagnostic financier gratuit. Expertise DAF externalisé, levée de fonds et contrôle de gestion pour TPE/PME.">
     <link rel="icon" type="image/svg+xml" href="FAVICON/favicon.svg">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="FAVICON/favicon.svg">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../aneto-style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">
-                <span class="logo-icon">VIC</span>
-                VI Conseil
-            </div>
+            <a href="index.html" class="logo">
+                <img src="LOGO/PNG Logo Files/Original Logo.png" alt="VI Conseil" style="height: 120px; width: auto;">
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="services.html">Mon offre</a></li>
+                <li><a href="../services.html">Services</a></li>
                 <li><a href="apropos.html">À propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
                 <li><a href="client-login.html" class="client-login-btn">Espace Client</a></li>
             </ul>
-            <button class="mobile-menu">☰</button>
+            <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
         </nav>
     </header>
 
-    <!-- Contact Section -->
-    <section class="main-content contact">
+    <!-- Hero Section -->
+    <section class="hero" style="padding: 140px 0 80px;">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Prenons Rendez-vous</h2>
-            <div class="contact-content">
-                <div class="contact-form">
-                    <h3>Demande de Rendez-vous</h3>
+            <div class="text-center">
+                <h1>Prenons rendez-vous</h1>
+                <p class="lead">Un échange de 30 minutes pour comprendre vos enjeux et vous présenter des solutions concrètes, adaptées à votre secteur d'activité.</p>
+                <div style="margin-top: 40px;">
+                    <a href="https://calendly.com/viconseil" target="_blank" class="btn btn-primary btn-large" style="margin-right: 20px;">
+                        📅 Réserver un créneau Calendly
+                    </a>
+                    <span class="text-secondary">ou remplissez le formulaire ci-dessous</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="hero-content" style="gap: 60px; align-items: flex-start;">
+                <div class="contact-form" style="background: white; padding: 40px; border-radius: 12px; box-shadow: var(--shadow-md); border-left: 4px solid var(--primary-color);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 24px;">Formulaire de contact</h3>
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="nom">Nom & Prénom *</label>
-                            <input type="text" id="nom" name="nom" required>
+                            <input type="text" id="nom" name="nom" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 1rem;">
                         </div>
                         <div class="form-group">
                             <label for="entreprise">Entreprise *</label>
-                            <input type="text" id="entreprise" name="entreprise" required>
+                            <input type="text" id="entreprise" name="entreprise" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 1rem;">
                         </div>
                         <div class="form-group">
                             <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 1rem;">
                         </div>
                         <div class="form-group">
                             <label for="telephone">Téléphone</label>
-                            <input type="tel" id="telephone" name="telephone">
+                            <input type="tel" id="telephone" name="telephone" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 1rem;">
                         </div>
                         <div class="form-group">
                             <label for="besoin">Type de besoin</label>
-                            <select id="besoin" name="besoin">
-                                <option value="">Sélectionnez...</option>
-                                <option value="pilotage">Pilotage financier</option>
+                            <select id="besoin" name="besoin" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 1rem;">
+                                <option value="">Sélectionnez votre besoin...</option>
+                                <option value="pilotage">Direction financière & pilotage</option>
                                 <option value="controle">Contrôle de gestion</option>
                                 <option value="levee">Levée de fonds</option>
-                                <option value="conformite">Conformité & Reporting</option>
+                                <option value="conformite">Conformité & audit</option>
                                 <option value="strategie">Stratégie financière</option>
-                                <option value="autre">Autre</option>
+                                <option value="diagnostic">Diagnostic gratuit</option>
+                                <option value="autre">Autre besoin</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Décrivez brièvement votre besoin..."></textarea>
+                            <textarea id="message" name="message" rows="4" placeholder="Décrivez brièvement votre situation et vos enjeux..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 1rem; resize: vertical;"></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Envoyer la demande</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 16px;">Envoyer la demande</button>
                     </form>
                 </div>
+                
                 <div class="contact-info">
-                    <h3>Informations de Contact</h3>
-                    <div class="contact-item">
-                        <i>📧</i>
-                        <span>vincent@viconseil.com</span>
+                    <div style="background: var(--background-light); padding: 40px; border-radius: 12px; box-shadow: var(--shadow-sm); margin-bottom: 32px;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 24px;">Informations de contact</h3>
+                        <div style="margin-bottom: 20px; display: flex; align-items: center;">
+                            <span style="font-size: 1.2rem; margin-right: 12px;">📧</span>
+                            <span style="color: var(--text-primary);">vincent@viconseil.com</span>
+                        </div>
+                        <div style="margin-bottom: 20px; display: flex; align-items: center;">
+                            <span style="font-size: 1.2rem; margin-right: 12px;">📱</span>
+                            <span style="color: var(--text-primary);">06 84 18 53 99</span>
+                        </div>
+                        <div style="margin-bottom: 20px; display: flex; align-items: center;">
+                            <span style="font-size: 1.2rem; margin-right: 12px;">📍</span>
+                            <span style="color: var(--text-primary);">Occitanie - Interventions nationales</span>
+                        </div>
+                        <div style="margin-bottom: 20px; display: flex; align-items: center;">
+                            <span style="font-size: 1.2rem; margin-right: 12px;">🕒</span>
+                            <span style="color: var(--text-primary);">Réponse sous 4h</span>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <span style="font-size: 1.2rem; margin-right: 12px;">💼</span>
+                            <a href="https://linkedin.com/in/vincent-izquierdo" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">Profil LinkedIn</a>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i>📱</i>
-                        <span>06 84 18 53 99</span>
+
+                    <div style="background: var(--primary-color); color: white; padding: 32px; border-radius: 12px;">
+                        <h4 style="color: white; margin-bottom: 20px;">Pourquoi VI Conseil ?</h4>
+                        <div style="margin-bottom: 16px; display: flex; align-items: flex-start;">
+                            <span style="color: var(--accent-color); margin-right: 8px; margin-top: 2px;">✓</span>
+                            <span>15 ans d'expérience en finance d'entreprise</span>
+                        </div>
+                        <div style="margin-bottom: 16px; display: flex; align-items: flex-start;">
+                            <span style="color: var(--accent-color); margin-right: 8px; margin-top: 2px;">✓</span>
+                            <span>Accompagnement opérationnel et orienté résultats</span>
+                        </div>
+                        <div style="margin-bottom: 16px; display: flex; align-items: flex-start;">
+                            <span style="color: var(--accent-color); margin-right: 8px; margin-top: 2px;">✓</span>
+                            <span>Expertise en outils modernes et IA</span>
+                        </div>
+                        <div style="margin-bottom: 16px; display: flex; align-items: flex-start;">
+                            <span style="color: var(--accent-color); margin-right: 8px; margin-top: 2px;">✓</span>
+                            <span>Flexibilité et réactivité</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start;">
+                            <span style="color: var(--accent-color); margin-right: 8px; margin-top: 2px;">✓</span>
+                            <span>Premier diagnostic offert</span>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i>📍</i>
-                        <span>Occitanie</span>
-                    </div>
-                    <div class="contact-item">
-                        <i>🕒</i>
-                        <span>Réponse sous 24h</span>
-                    </div>
-                    <div class="contact-item">
-                        <i>💼</i>
-                        <span><a href="https://linkedin.com/in/vincent-izquierdo" target="_blank" style="color: #64b5f6; text-decoration: none;">LinkedIn</a></span>
-                    </div>
-                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.1); border-radius: 10px;">
-                        <h4 style="margin-bottom: 1rem;">Pourquoi me choisir ?</h4>
-                        <ul style="list-style: none;">
-                            <li style="margin-bottom: 0.5rem;">✓ Opérationnel et orienté résultat</li>
-                            <li style="margin-bottom: 0.5rem;">✓ Flexibilité et réactivité</li>
-                            <li style="margin-bottom: 0.5rem;">✓ Forte sensibilité informatique et IA</li>
-                            <li style="margin-bottom: 0.5rem;">✓ Accompagnement personnalisé</li>
-                        </ul>
-                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section values-section">
+        <div class="container">
+            <div class="text-center">
+                <h2>Comment ça se passe ?</h2>
+                <p class="text-large">Un processus simple et transparent pour démarrer notre collaboration.</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">📞</div>
+                    <h3>1. Premier échange</h3>
+                    <p>Discussion de 30 minutes pour comprendre votre situation, vos enjeux et vos objectifs de croissance.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🔍</div>
+                    <h3>2. Diagnostic gratuit</h3>
+                    <p>Analyse rapide de votre situation financière et identification des opportunités d'optimisation.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">📋</div>
+                    <h3>3. Proposition sur mesure</h3>
+                    <p>Plan d'accompagnement personnalisé avec objectifs, livrables et planning détaillé.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>4. Démarrage immédiat</h3>
+                    <p>Mise en œuvre des solutions avec formation de vos équipes et premiers résultats sous 2 semaines.</p>
                 </div>
             </div>
         </div>
@@ -112,13 +180,19 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 VI Conseil. Tous droits réservés. | DAF Externalisé & Conseil Financier pour TPE, PME & ETI</p>
+            <p>&copy; 2024 VI Conseil. Tous droits réservés. DAF Externalisé & Conseil Financier pour TPE, PME & ETI</p>
         </div>
     </footer>
 
-    <script src="environment-banner.js"></script>
-    <script src="mobile-menu.js"></script>
+    <!-- Scripts -->
+    <script src="../environment-banner.js"></script>
     <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
         // Initialize EmailJS
         emailjs.init('DiwXIRDrF3ZYQpJT4');
 
@@ -126,7 +200,7 @@
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const submitBtn = document.querySelector('.submit-btn');
+            const submitBtn = document.querySelector('.btn');
             const originalText = submitBtn.textContent;
             
             // Change button state
@@ -161,17 +235,24 @@
                 });
         });
 
-        // Add fade-in animation on load
-        window.addEventListener('load', function() {
-            const contactContent = document.querySelector('.contact-content');
-            contactContent.style.opacity = '0';
-            contactContent.style.transform = 'translateY(30px)';
-            contactContent.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            
-            setTimeout(() => {
-                contactContent.style.opacity = '1';
-                contactContent.style.transform = 'translateY(0)';
-            }, 200);
+        // Simple fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToAnimate = document.querySelectorAll('.value-card, .contact-form, .contact-info');
+            elementsToAnimate.forEach(el => observer.observe(el));
         });
     </script>
 </body>

@@ -6,29 +6,24 @@
     <title>Espace Client - VI Conseil</title>
     <link rel="icon" type="image/svg+xml" href="FAVICON/favicon.svg">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="FAVICON/favicon.svg">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="client-styles.css">
+    <link rel="stylesheet" href="../aneto-style.css">
+    <link rel="stylesheet" href="../client-styles.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">
-                <a href="index.html" style="text-decoration: none; color: inherit;">
-                    <span class="logo-icon">VIC</span>
-                    VI Conseil
-                </a>
-            </div>
+            <a href="index.html" class="logo">
+                <img src="LOGO/PNG Logo Files/Original Logo.png" alt="VI Conseil" style="height: 120px; width: auto;">
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="services.html">Mon offre</a></li>
+                <li><a href="../services.html">Services</a></li>
                 <li><a href="apropos.html">À propos</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="#" onclick="logout()" class="logout-btn">Déconnexion</a></li>
+                <li><a href="#" onclick="logout()" class="logout-btn" style="color: #ef4444 !important;">Déconnexion</a></li>
             </ul>
-            <button class="mobile-menu">☰</button>
+            <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
         </nav>
     </header>
 
@@ -246,9 +241,9 @@
         </div>
     </footer>
 
-    <script src="environment-banner.js"></script>
-    <script src="mobile-menu.js"></script>
-    <script src="client-security.js"></script>
-    <script src="client-dashboard.js"></script>
+    <script src="../environment-banner.js"></script>
+    <script src="../mobile-menu.js"></script>
+    <script src="../client-security.js"></script>
+    <script src="../client-dashboard.js"></script>
 </body>
 </html>

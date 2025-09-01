@@ -3,81 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VI Conseil - Mon offre</title>
-    <link rel="icon" type="image/svg+xml" href="FAVICON/favicon.svg">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="FAVICON/favicon.svg">
-    <link rel="stylesheet" href="styles.css">
+    <title>VI Conseil - Services & Expertise Financière</title>
+    <meta name="description" content="Découvrez nos services d'expertise financière : direction financière, levée de fonds, contrôle de gestion et conformité pour TPE/PME.">
+    <link rel="icon" type="image/svg+xml" href="VI%20Conseil%20V2/FAVICON/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="VI%20Conseil%20V2/favicon.ico">
+    <link rel="stylesheet" href="aneto-style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">
-                <span class="logo-icon">VIC</span>
-                VI Conseil
-            </div>
+            <a href="VI%20Conseil%20V2/index.html" class="logo">
+                <img src="LOGO/PNG%20Logo%20Files/Original%20Logo.png" alt="VI Conseil" style="height: 120px; width: auto;">
+            </a>
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="services.html">Mon offre</a></li>
+                <li><a href="VI%20Conseil%20V2/index.html">Accueil</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="apropos.html">À propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="client-login.html" class="client-login-btn">Espace Client</a></li>
+                <li><a href="VI%20Conseil%20V2/contact.html">Contact</a></li>
+                <li><a href="VI%20Conseil%20V2/client-login.html" class="client-login-btn">Espace Client</a></li>
             </ul>
-            <button class="mobile-menu">☰</button>
+            <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
         </nav>
     </header>
 
-    <!-- Services Section -->
-    <section class="main-content">
+    <!-- Hero Section -->
+    <section class="hero" style="padding: 140px 0 80px;">
         <div class="container">
-            <h2 class="section-title">Mon offre</h2>
+            <div class="text-center">
+                <h1>Services d'expertise financière</h1>
+                <p class="lead">Une gamme complète de services pour optimiser votre gestion financière et accélérer votre croissance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section">
+        <div class="container">
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Pilotage Financier</h3>
-                    <div class="service-list">
-                        <div class="service-item">Business plans</div>
-                        <div class="service-item">Suivi du cash flow</div>
-                        <div class="service-item">Prévisions budgétaires</div>
-                        <div class="service-item">Reportings financiers</div>
-                    </div>
+                    <h3>Direction Financière</h3>
+                    <p>Pilotage financier complet avec reporting, budgets prévisionnels et analyse de performance pour une vision claire de votre activité.</p>
+                    <ul class="service-list">
+                        <li>Business plans & modélisation financière</li>
+                        <li>Tableaux de bord & reporting temps réel</li>
+                        <li>Suivi et optimisation du cash flow</li>
+                        <li>Prévisions budgétaires & forecasting</li>
+                        <li>Analyse de rentabilité par activité</li>
+                        <li>KPIs personnalisés et pilotage</li>
+                    </ul>
                 </div>
+
                 <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3>Contrôle de Gestion</h3>
-                    <div class="service-list">
-                        <div class="service-item">Analyse des coûts</div>
-                        <div class="service-item">Rentabilité par activité</div>
-                        <div class="service-item">Optimisation des marges</div>
-                        <div class="service-item">Outils de pilotage opérationnel</div>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📈</div>
                     <h3>Levée de Fonds</h3>
-                    <div class="service-list">
-                        <div class="service-item">Préparation du dossier</div>
-                        <div class="service-item">Présentation aux investisseurs</div>
-                        <div class="service-item">Négociation avec les banques</div>
-                        <div class="service-item">Suivi des démarches</div>
-                    </div>
+                    <p>Accompagnement complet dans vos projets de financement, de la préparation du dossier aux négociations avec investisseurs.</p>
+                    <ul class="service-list">
+                        <li>Préparation dossier investisseurs</li>
+                        <li>Business plan & pitch deck</li>
+                        <li>Valorisation d'entreprise</li>
+                        <li>Due diligence financière</li>
+                        <li>Négociation avec banques & investisseurs</li>
+                        <li>Suivi post-financement</li>
+                    </ul>
                 </div>
+
                 <div class="service-card">
-                    <div class="service-icon">⚖️</div>
-                    <h3>Conformité & Reporting</h3>
-                    <div class="service-list">
-                        <div class="service-item">Mise en conformité comptable</div>
-                        <div class="service-item">Préparation des clôtures</div>
-                        <div class="service-item">Reporting financier</div>
-                        <div class="service-item">Accompagnement des audits</div>
-                    </div>
+                    <h3>Contrôle de Gestion</h3>
+                    <p>Mise en place d'outils de pilotage et optimisation de la performance opérationnelle pour maximiser votre rentabilité.</p>
+                    <ul class="service-list">
+                        <li>Système de calcul des coûts</li>
+                        <li>Analyse rentabilité par activité</li>
+                        <li>Contrôle budgétaire & écarts</li>
+                        <li>Optimisation des marges</li>
+                        <li>Indicateurs de performance (KPI)</li>
+                        <li>Processus & procédures de gestion</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Conformité & Audit</h3>
+                    <p>Assurer la conformité de vos processus financiers et vous accompagner dans vos démarches d'audit et de certification.</p>
+                    <ul class="service-list">
+                        <li>Mise en conformité comptable</li>
+                        <li>Préparation des clôtures annuelles</li>
+                        <li>Reporting financier réglementaire</li>
+                        <li>Accompagnement des audits</li>
+                        <li>Procédures de contrôle interne</li>
+                        <li>Formation des équipes financières</li>
+                    </ul>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section values-section">
+        <div class="container">
+            <div class="text-center">
+                <h2>Ma méthode d'accompagnement</h2>
+                <p class="text-large">Une approche structurée en 4 étapes pour des résultats concrets et durables.</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🔍</div>
+                    <h3>1. Diagnostic</h3>
+                    <p>Audit complet de votre situation financière actuelle, identification des enjeux et opportunités d'amélioration.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">📋</div>
+                    <h3>2. Stratégie</h3>
+                    <p>Définition d'un plan d'action personnalisé avec objectifs chiffrés et roadmap de mise en œuvre.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>3. Implémentation</h3>
+                    <p>Déploiement des solutions avec formation de vos équipes et mise en place d'outils de suivi.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">📈</div>
+                    <h3>4. Suivi</h3>
+                    <p>Accompagnement continu avec reporting régulier et ajustements pour garantir l'atteinte des objectifs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2>Besoin d'une expertise financière sur mesure ?</h2>
+            <p>Chaque entreprise a des besoins spécifiques. Échangeons sur vos enjeux pour construire une solution adaptée à votre secteur et votre taille.</p>
             
-            <div style="text-align: center; margin-top: 4rem;">
-                <a href="contact.html" class="cta-button">Me contacter</a>
+            <div class="cta-buttons">
+                <a href="https://calendly.com/viconseil" target="_blank" class="btn btn-white btn-large">
+                    📅 Réserver un diagnostic gratuit
+                </a>
+                <span style="color: rgba(255,255,255,0.8);">ou</span>
+                <a href="VI%20Conseil%20V2/contact.html" class="btn btn-outline btn-large" style="border-color: white; color: white;">
+                    ✉️ Demander un devis
+                </a>
             </div>
         </div>
     </section>
@@ -85,34 +153,37 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 VI Conseil. Tous droits réservés. | DAF Externalisé & Conseil Financier pour TPE, PME & ETI</p>
+            <p>&copy; 2024 VI Conseil. Tous droits réservés. DAF Externalisé & Conseil Financier pour TPE, PME & ETI</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="environment-banner.js"></script>
-    <script src="mobile-menu.js"></script>
     <script>
-        // Add animation on scroll
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Simple fade-in animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('fade-in-up');
                 }
             });
         }, observerOptions);
 
-        // Observe service cards for animation
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToAnimate = document.querySelectorAll('.service-card, .value-card');
+            elementsToAnimate.forEach(el => observer.observe(el));
         });
     </script>
 </body>
