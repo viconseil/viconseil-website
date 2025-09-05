@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil\\LOGO/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

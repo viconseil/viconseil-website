@@ -311,14 +311,11 @@ nav {
 
 .values-grid {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    justify-content: center;
     gap: 32px;
     margin-top: 60px;
     padding-bottom: 20px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-color) #f1f1f1;
+    flex-wrap: wrap;
 }
 
 .value-card {
@@ -329,8 +326,8 @@ nav {
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     min-width: 280px;
-    flex: 0 0 280px;
-    scroll-snap-align: start;
+    max-width: 320px;
+    flex: 1;
 }
 
 .value-card:hover {
@@ -688,3 +685,267 @@ footer p {
 .mt-1 { margin-top: 16px; }
 .mt-2 { margin-top: 32px; }
 .mt-3 { margin-top: 48px; }
+
+/* ========== TECHNOLOGIES SECTION ========== */
+.technologies-section {
+    background: var(--background-light);
+    border-top: 1px solid var(--border-color);
+}
+
+.technologies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.tech-category {
+    text-align: center;
+}
+
+.tech-category h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+}
+
+.tech-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.tech-logo {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    cursor: pointer;
+    padding: 12px;
+}
+
+.tech-logo:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.tech-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(20%) opacity(0.85);
+    transition: var(--transition);
+}
+
+.tech-logo:hover img {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
+}
+
+/* Technologies responsive */
+@media (max-width: 768px) {
+    .technologies-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 32px;
+        margin-top: 40px;
+    }
+    
+    .tech-logos {
+        gap: 16px;
+    }
+    
+    .tech-logo {
+        width: 64px;
+        height: 64px;
+        padding: 8px;
+    }
+}
+
+/* ========== SLIDER SYSTEM ========== */
+.slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+}
+
+.slider-arrow:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-arrow-left {
+    left: -25px;
+}
+
+.slider-arrow-right {
+    right: -25px;
+}
+
+/* Services Grid - Affichage simple sur desktop */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.service-card {
+    /* Retour au style normal */
+}
+
+/* Technologies Grid - Affichage simple sur desktop */
+.technologies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    width: 100%;
+}
+
+.tech-category {
+    /* Retour au style normal */
+}
+
+/* Testimonials Grid */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.testimonial-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    margin-bottom: 24px;
+}
+
+.testimonial-logo img {
+    max-height: 40px;
+    max-width: 120px;
+    object-fit: contain;
+    opacity: 0.7;
+}
+
+.testimonial-company {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: normal;
+}
+
+/* Responsive grids */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .technologies-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-top: 40px;
+    }
+    
+    .slider-arrow {
+        display: none; /* Masquer les flèches sur mobile */
+    }
+    
+    .slider-container {
+        margin-top: 40px;
+    }
+}
+
+/* ========== FOOTER ========== */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+}
+
+.linkedin-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.linkedin-link:hover {
+    color: #0077B5;
+    background: rgba(0, 119, 181, 0.1);
+    border-color: rgba(0, 119, 181, 0.2);
+    transform: translateY(-1px);
+}
+
+.linkedin-link svg {
+    transition: var(--transition);
+}
+
+.linkedin-link:hover svg {
+    transform: scale(1.1);
+}
+
+/* Footer responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+    
+    .footer-content p {
+        margin-bottom: 0;
+    }
+}
