@@ -57,6 +57,10 @@ body {
     padding: 80px 0;
 }
 
+.main-content {
+    padding-top: 160px;
+}
+
 .section-sm {
     padding: 60px 0;
 }
@@ -161,15 +165,15 @@ nav {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 40px;
+    gap: 32px;
     align-items: center;
 }
 
 .nav-links a {
     color: var(--text-primary);
     text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
+    font-weight: 600;
+    font-size: 1.2rem;
     transition: var(--transition);
     position: relative;
 }
@@ -202,7 +206,7 @@ nav {
 
 /* ========== HERO SECTION ========== */
 .hero {
-    padding: 140px 0 100px;
+    padding: 180px 0 100px;
     background: var(--background);
 }
 
@@ -598,7 +602,11 @@ footer p {
     }
     
     .hero {
-        padding: 120px 0 80px;
+        padding: 160px 0 80px;
+    }
+    
+    .main-content {
+        padding-top: 140px;
     }
     
     .hero-content {
