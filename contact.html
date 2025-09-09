@@ -328,16 +328,43 @@
                 message: document.getElementById('message').value
             };
             
-            // Send email via EmailJS
+            // Send notification email to Vincent
             emailjs.send('service_8p0xltx', 'template_hje0hun', templateParams)
                 .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    alert('Merci pour votre demande ! Je vous recontacterai dans les plus brefs délais.');
+                    console.log('✅ Notification email sent successfully!', response.status, response.text);
+                    
+                    // Send confirmation email to the prospect
+                    const confirmationParams = {
+                        to_email: document.getElementById('email').value,
+                        to_name: document.getElementById('nom').value,
+                        company: document.getElementById('entreprise').value
+                    };
+                    
+                    console.log('📧 Sending confirmation email to:', confirmationParams.to_email);
+                    return emailjs.send('service_8p0xltx', 'template_confirmation', confirmationParams);
+                })
+                .then(function(response) {
+                    console.log('✅ Confirmation email sent successfully!', response.status, response.text);
+                    alert('Merci pour votre demande ! Un email de confirmation vous a été envoyé. Je vous recontacterai dans les plus brefs délais.');
                     document.getElementById('contactForm').reset();
+                    
+                    // Redirect to home page after 2 seconds
+                    setTimeout(function() {
+                        window.location.href = 'index.html';
+                    }, 2000);
                 })
                 .catch(function(error) {
-                    console.log('FAILED...', error);
-                    alert('Erreur lors de l\'envoi. Veuillez réessayer ou me contacter directement.');
+                    console.error('❌ ERROR Details:', error);
+                    console.error('❌ Error status:', error.status);
+                    console.error('❌ Error text:', error.text);
+                    
+                    if (error.status === 400) {
+                        alert('Erreur de configuration du template. Veuillez vérifier les paramètres EmailJS.');
+                    } else if (error.status === 422) {
+                        alert('Erreur dans les données du formulaire. Veuillez vérifier tous les champs.');
+                    } else {
+                        alert('Erreur lors de l\'envoi (' + error.status + '). Veuillez réessayer ou me contacter directement.');
+                    }
                 })
                 .finally(function() {
                     // Reset button state
