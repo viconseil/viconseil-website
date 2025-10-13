@@ -21,7 +21,8 @@
       "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
       "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil\\LOGO/**)",
       "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
-      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)"
+      "Read(/C:\\Users\\vizqu\\OneDrive - VIconseil\\CLAUDE Code\\SITE WEB VI conseil/**)",
+      "WebFetch(domain:www.acso-conseils.com)"
     ],
     "deny": [],
     "ask": []
