@@ -257,32 +257,174 @@
             </div>
 
             <div style="max-width: 900px; margin: 48px auto 0;">
-                <div class="value-card" style="margin-bottom: 24px; text-align: left;">
-                    <h3 style="color: #2c3e50; margin-bottom: 12px;">📍 Dans quelle zone géographique intervenez-vous ?</h3>
-                    <p>J'interviens principalement à <strong>Toulouse et dans toute la Haute-Garonne</strong>. Je travaille également avec des entreprises dans l'ensemble de la région <strong>Occitanie</strong> (Montpellier, Perpignan, Tarbes, Albi, Carcassonne...). Grâce aux outils digitaux, je peux aussi accompagner des clients partout en France en distanciel.</p>
-                </div>
+                <div class="faq-accordion">
+                    <!-- Question 1 -->
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">📍</span>
+                            <span class="faq-text">Dans quelle zone géographique intervenez-vous ?</span>
+                            <span class="faq-arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>J'interviens principalement à <strong>Toulouse et dans toute la Haute-Garonne</strong>. Je travaille également avec des entreprises dans l'ensemble de la région <strong>Occitanie</strong> (Montpellier, Perpignan, Tarbes, Albi, Carcassonne...). Grâce aux outils digitaux, je peux aussi accompagner des clients partout en France en distanciel.</p>
+                        </div>
+                    </div>
 
-                <div class="value-card" style="margin-bottom: 24px; text-align: left;">
-                    <h3 style="color: #2c3e50; margin-bottom: 12px;">💼 Qu'est-ce qu'un DAF externalisé exactement ?</h3>
-                    <p>Un <strong>DAF externalisé (Directeur Administratif et Financier externalisé)</strong> est un expert financier qui intervient à temps partagé dans votre entreprise. Contrairement à un DAF salarié, vous bénéficiez d'une expertise de haut niveau de manière flexible et à moindre coût, adaptée aux besoins des TPE et PME de Toulouse.</p>
-                </div>
+                    <!-- Question 2 -->
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">💼</span>
+                            <span class="faq-text">Qu'est-ce qu'un DAF externalisé exactement ?</span>
+                            <span class="faq-arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Un <strong>DAF externalisé (Directeur Administratif et Financier externalisé)</strong> est un expert financier qui intervient à temps partagé dans votre entreprise. Contrairement à un DAF salarié, vous bénéficiez d'une expertise de haut niveau de manière flexible et à moindre coût, adaptée aux besoins des TPE et PME de Toulouse.</p>
+                        </div>
+                    </div>
 
-                <div class="value-card" style="margin-bottom: 24px; text-align: left;">
-                    <h3 style="color: #2c3e50; margin-bottom: 12px;">⏱️ Quelle est votre disponibilité pour un premier rendez-vous ?</h3>
-                    <p>Je réponds sous 24h et je peux organiser un premier diagnostic offert sous 48-72h, soit dans vos locaux à Toulouse, soit en visioconférence selon vos préférences. Ce premier échange permet d'identifier vos enjeux financiers et de définir ensemble un plan d'action personnalisé.</p>
-                </div>
+                    <!-- Question 3 -->
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">⏱️</span>
+                            <span class="faq-text">Quelle est votre disponibilité pour un premier rendez-vous ?</span>
+                            <span class="faq-arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Je réponds sous 24h et je peux organiser un premier diagnostic offert sous 48-72h, soit dans vos locaux à Toulouse, soit en visioconférence selon vos préférences. Ce premier échange permet d'identifier vos enjeux financiers et de définir ensemble un plan d'action personnalisé.</p>
+                        </div>
+                    </div>
 
-                <div class="value-card" style="margin-bottom: 24px; text-align: left;">
-                    <h3 style="color: #2c3e50; margin-bottom: 12px;">🎯 Quels types d'entreprises accompagnez-vous ?</h3>
-                    <p>J'accompagne principalement des <strong>TPE, PME et startups à Toulouse</strong> dans des secteurs variés : industrie, services, tech, e-commerce, santé... Mon expertise s'adapte aux entreprises en croissance, en difficulté de trésorerie, ou en phase de levée de fonds. Chiffre d'affaires de 500K€ à 20M€ typiquement.</p>
-                </div>
+                    <!-- Question 4 -->
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">🎯</span>
+                            <span class="faq-text">Quels types d'entreprises accompagnez-vous ?</span>
+                            <span class="faq-arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>J'accompagne principalement des <strong>TPE, PME et startups à Toulouse</strong> dans des secteurs variés : industrie, services, tech, e-commerce, santé... Mon expertise s'adapte aux entreprises en croissance, en difficulté de trésorerie, ou en phase de levée de fonds. Chiffre d'affaires de 500K€ à 20M€ typiquement.</p>
+                        </div>
+                    </div>
 
-                <div class="value-card" style="text-align: left;">
-                    <h3 style="color: #2c3e50; margin-bottom: 12px;">💰 Comment se passe la facturation de vos services ?</h3>
-                    <p>Ma mission de <strong>DAF externalisé à Toulouse</strong> peut être facturée de plusieurs façons selon vos besoins : forfait mensuel à temps partagé (idéal pour un suivi régulier), mission ponctuelle (levée de fonds, audit...), ou accompagnement projet. Lors de notre premier échange, je vous propose un devis sur-mesure adapté à vos enjeux.</p>
+                    <!-- Question 5 -->
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">💰</span>
+                            <span class="faq-text">Comment se passe la facturation de vos services ?</span>
+                            <span class="faq-arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Ma mission de <strong>DAF externalisé à Toulouse</strong> peut être facturée de plusieurs façons selon vos besoins : forfait mensuel à temps partagé (idéal pour un suivi régulier), mission ponctuelle (levée de fonds, audit...), ou accompagnement projet. Lors de notre premier échange, je vous propose un devis sur-mesure adapté à vos enjeux.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <style>
+            .faq-accordion {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .faq-item {
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .faq-item:hover {
+                box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+                transform: translateY(-2px);
+            }
+
+            .faq-question {
+                width: 100%;
+                padding: 24px;
+                background: white;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                text-align: left;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #2c3e50;
+                transition: background 0.3s ease;
+            }
+
+            .faq-question:hover {
+                background: #f8f9fa;
+            }
+
+            .faq-icon {
+                font-size: 1.5rem;
+                flex-shrink: 0;
+            }
+
+            .faq-text {
+                flex: 1;
+            }
+
+            .faq-arrow {
+                font-size: 0.8rem;
+                color: #3498db;
+                transition: transform 0.3s ease;
+                flex-shrink: 0;
+            }
+
+            .faq-item.active .faq-arrow {
+                transform: rotate(180deg);
+            }
+
+            .faq-answer {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease, padding 0.4s ease;
+                padding: 0 24px;
+            }
+
+            .faq-item.active .faq-answer {
+                max-height: 500px;
+                padding: 0 24px 24px 24px;
+            }
+
+            .faq-answer p {
+                margin: 0;
+                line-height: 1.8;
+                color: #555;
+                font-size: 1rem;
+            }
+
+            .faq-item.active .faq-question {
+                background: #f8f9fa;
+                border-bottom: 2px solid #3498db;
+            }
+
+            /* Mobile responsive */
+            @media (max-width: 768px) {
+                .faq-question {
+                    padding: 20px 16px;
+                    font-size: 1rem;
+                }
+
+                .faq-icon {
+                    font-size: 1.3rem;
+                }
+
+                .faq-answer {
+                    padding: 0 16px;
+                }
+
+                .faq-item.active .faq-answer {
+                    padding: 0 16px 20px 16px;
+                }
+            }
+        </style>
     </section>
 
     <!-- CTA Section -->
@@ -393,6 +535,22 @@
             const elementsToAnimate = document.querySelectorAll('.value-card, .service-card, .testimonial-content');
             elementsToAnimate.forEach(el => observer.observe(el));
         });
+
+        // FAQ Accordion Toggle
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const wasActive = faqItem.classList.contains('active');
+
+            // Fermer toutes les autres FAQ
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Ouvrir celle-ci si elle n'était pas déjà ouverte
+            if (!wasActive) {
+                faqItem.classList.add('active');
+            }
+        }
 
         // Plus besoin de sliders - tout est en grille maintenant !
     </script>
