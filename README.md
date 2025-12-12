@@ -89,7 +89,7 @@ python -m http.server 8000
 - 📧 vincent@viconseil.com
 - 📱 06 84 18 53 99
 - 🌐 [Site V1](https://vi-conseil.vercel.app)
-- 💼 [LinkedIn](https://linkedin.com/in/vincent-izquierdo)
+- 💼 [LinkedIn](https://www.linkedin.com/in/vincent-izquierdo)
 
 ---
 
